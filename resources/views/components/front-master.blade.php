@@ -43,17 +43,17 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <x-masthead/>
+        <x-front.masthead/>
         <!-- Applications-->
-        <x-applications/>
+        <x-front.applications/>
         <!-- About Section-->
-        <x-about/>
+        <x-front.about/>
         <!-- Experience Section-->
-        <x-experience/>
+        <x-front.experience/>
         <!-- Education Section-->
-        <x-education/>
+        <x-front.education/>
         <!-- Interests Section-->
-        <x-interests/>
+        <x-front.interests/>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
