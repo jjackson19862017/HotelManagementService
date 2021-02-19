@@ -12,7 +12,7 @@ class HotelController extends Controller
     {
         $data = [];
         $data['hotels'] = Hotel::all(); // Returns all the data from the Hotels Table
-        return view('admin.roles.index', $data);
+        return view('admin.hotel.index', $data);
     }
 
     public function store(Request $request)
@@ -44,6 +44,7 @@ class HotelController extends Controller
         ]);
 
         $request->session()->flash('message', 'Hotel was created...');
+        $request->session()->flash('text-class', 'text-success');
 
         return back();
     }
@@ -52,7 +53,7 @@ class HotelController extends Controller
     {
         // Delete User
         $hotel->delete();
-        $request->session()->flash('message', 'Hotel was Deleted...');
+        $request->session()->flash('message', $hotel->name . ' was Deleted...');
         $request->session()->flash('text-class', 'text-danger');
         return back();
     }

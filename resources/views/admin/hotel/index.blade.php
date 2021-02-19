@@ -1,26 +1,12 @@
 <x-admin-master>
     @section('content')
     <div class="container-fluid">
-        <!-- Top Row -->
-        <div class="row">
-            <div class="col-sm-7">
-                <h1 class="mt-4">Hotels</h1>
-            </div>
-            <div class="col-sm-5">
-                <h3 class="font-weight-bold @if (Session::has('text-class'))
-                {{Session::get('text-class')}}
-                @endif">
-                    @if (Session::has('message'))
-                        {{Session::get('message')}}
-                    @endif
-                </h3>
-            </div>
-        </div>
+        <br>
         <div class="row">
             <div class="card mb-4 w-100">
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
-                    Users <span class="float-right"><a name="" id="" class="btn btn-success btn-sm"
+                    Hotels <span class="float-right"><a name="" id="" class="btn btn-success btn-sm"
                         data-toggle="modal" data-target="#addHotelModel"
                         role="button">Create Hotel</a></span>
                 </div>
@@ -47,7 +33,6 @@
                                         <td>{{$hotel->telephone}}</td>
                                         <td>{{$hotel->address}}<br>{{$hotel->town}}<br>{{$hotel->county}}<br>{{$hotel->postcode}}</td>
                                         <td>{{$hotel->website}}</td>
-
                                         <td><a href="mailto:{{$hotel->email}}">{{$hotel->email}}</td>
                                         <td>{{$hotel->numberOfRooms}}</td>
 
@@ -79,67 +64,111 @@
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add User?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add Hotel?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true"><i class="fas fa-times"></i></span></span>
             </button>
         </div>
         <div class="modal-body">
-            <form action="{{route('user.store')}}" method="post" class="form-horizontal">
+            <form action="{{route('hotel.store')}}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group row">
-                    <label for="username" class="col-form-label col-sm-3">Username</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control @error('username') is-invalid @enderror"
-                                name="username" id="username" aria-describedby="helpId"
-                                placeholder="Enter username" value="{{old('username')}}">
-                        @error('username')
-                        <div class="invalid-feedback">{{$message}}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="name" class="col-form-label col-sm-3">Name</label>
+                    <label for="name" class="col-form-label col-sm-3">Hotel Name</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                name="name" id="name" aria-describedby="helpId" placeholder="Enter Name"
-                                value="{{old('name')}}">
+                                name="name" id="name" aria-describedby="helpId"
+                                placeholder="Enter Hotel Name" value="{{old('name')}}">
                         @error('name')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="email" class="col-form-label col-sm-3"">Email</label>
+                    <label for="telephone" class="col-form-label col-sm-3">Telephone</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email"
-                                id="email" aria-describedby="helpId" placeholder="Enter Email"
-                                value="{{old('email')}}">
-                        @error('email')
+                        <input type="text" class="form-control @error('telephone') is-invalid @enderror"
+                                name="telephone" id="telephone" aria-describedby="helpId" placeholder="Enter Telephone Number"
+                                value="{{old('telephone')}}">
+                        @error('telephone')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="address" class="col-form-label col-sm-3">Street Address</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"
+                                id="address" aria-describedby="helpId" placeholder="Enter address"
+                                value="{{old('address')}}">
+                        @error('address')
                         <div class=" invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="password" class="col-form-label col-sm-3">Password</label>
+                    <label for="town" class="col-form-label col-sm-3">Town</label>
                     <div class="col-sm-9">
-                        <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                name="password" id="password" placeholder="" autocomplete="off">
-                        @error('password')
-                        <div class="invalid-feedback">{{$message}}</div>
+                        <input type="text" class="form-control @error('town') is-invalid @enderror" name="town"
+                                id="town" aria-describedby="helpId" placeholder="Enter town"
+                                value="{{old('town')}}">
+                        @error('town')
+                        <div class=" invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
                 </div>
-
                 <div class="form-group row">
-                    <label for="password_confirmation" class="col-form-label col-sm-3">Confirm Password</label>
+                    <label for="county" class="col-form-label col-sm-3">County</label>
                     <div class="col-sm-9">
-                        <input type="password"
-                                class="form-control @error('password_confirmation') is-invalid @enderror"
-                                name="password_confirmation" id="password_confirmation" placeholder="">
-                        @error('password_confirmation')
-                        <div class="invalid-feedback">{{$message}}</div>
+                        <input type="text" class="form-control @error('county') is-invalid @enderror" name="county"
+                                id="county" aria-describedby="helpId" placeholder="Enter county"
+                                value="{{old('county')}}">
+                        @error('county')
+                        <div class=" invalid-feedback">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="postcode" class="col-form-label col-sm-3">Post-Code</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode"
+                                id="postcode" aria-describedby="helpId" placeholder="Enter postcode"
+                                value="{{old('postcode')}}">
+                        @error('postcode')
+                        <div class=" invalid-feedback">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="website" class="col-form-label col-sm-3">Website</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('website') is-invalid @enderror" name="website"
+                                id="website" aria-describedby="helpId" placeholder="Enter website"
+                                value="{{old('website')}}">
+                        @error('website')
+                        <div class=" invalid-feedback">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-form-label col-sm-3">E-Mail</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email"
+                                id="email" aria-describedby="helpId" placeholder="Enter email"
+                                value="{{old('email')}}">
+                        @error('email')
+                        <div class=" invalid-feedback">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="numberOfRooms" class="col-form-label col-sm-3">Number Of Rooms</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control @error('numberOfRooms') is-invalid @enderror" name="numberOfRooms"
+                                id="numberOfRooms" aria-describedby="helpId" placeholder="How many rooms in the Hotel?"
+                                value="{{old('numberOfRooms')}}">
+                        @error('numberOfRooms')
+                        <div class=" invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
                 </div>
@@ -148,7 +177,7 @@
                         @if (Session::has('message'))
                         class="btn btn-success float-right">{{Session::get('message')}}
                     @else
-                        class="btn btn-primary float-right">Create User
+                        class="btn btn-primary float-right">Create Hotel
                     @endif
                 </button>
             </form>
