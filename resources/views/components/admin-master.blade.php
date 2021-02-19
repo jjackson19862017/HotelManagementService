@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <title>Dashboard</title>
         <link href="{{asset('css/back/styles.css')}}" rel="stylesheet">
-        <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" crossorigin="anonymous" />
+        <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet"/>
         <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
         <script src="{{asset('vendor/fontawesome-free/js/all.min.js')}}"></script>
     </head>
@@ -595,7 +595,7 @@
 <x-admin.useractions.logout/>
 
         <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('js/back/scripts.js')}}"></script>
         <script src="{{asset('vendor/chart.js/chart.min.js')}}"></script>
         <script src="{{asset('assets/demo/chart-area-demo.js')}}"></script>

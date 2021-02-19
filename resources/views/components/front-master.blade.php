@@ -47,18 +47,7 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <x-front.masthead/>
-        <!-- Applications-->
-        <x-front.applications/>
-        <!-- About Section-->
-        <x-front.about/>
-        <!-- Experience Section-->
-        <x-front.experience/>
-        <!-- Education Section-->
-        <x-front.education/>
-        <!-- Interests Section-->
-        <x-front.interests/>
+        @yield('content')
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -98,10 +87,7 @@
         </div>
 
         <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-
-
+        <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <!-- Core theme JS-->
         <script src="{{asset('js/front/scripts.js')}}"></script>
 
