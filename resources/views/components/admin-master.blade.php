@@ -14,9 +14,9 @@
     </head>
     <body class="sb-nav-fixed">
         <!-- Nav Bar -->
-        <x-admin.navbar/>
+        <x-admin.nav.navbar/>
         <!-- Side Nav Bar -->
-        <x-admin.sidebar/>
+        <x-admin.nav.sidebar/>
 
 <!-- Main Area -->
 <main>
@@ -590,6 +590,10 @@
         </footer>
     </div>
 </div>
+
+<!-- Logout Dialog Box -->
+<x-admin.useractions.logout/>
+
         <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('js/back/scripts.js')}}"></script>
