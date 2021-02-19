@@ -11,6 +11,6 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">Fullstack Web Developer - Technology Geek</p>
+            <p class="masthead-subheading font-weight-light mb-0">Fullstack Web Developer - PHP, OOP, Laravel, CSS, JS, MYSQL</p>
         </div>
     </header>
