@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -45,4 +46,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    public function getLastLoginAtAttribute($date)
+    {
+        // Changes the Date from the Database (String) to a Carbon Date
+        if($date == Null){
+            return "Never Logged in";
+        }
+        return Carbon::parse($date)->diffForHumans();
+    }
 }
