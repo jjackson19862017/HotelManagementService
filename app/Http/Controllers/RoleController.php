@@ -12,8 +12,9 @@ class RoleController extends Controller
     //
     public function index()
     {
-        $roles = Role::all(); // Returns all the data from the Roles Table
-        return view('admin.roles.index', ['roles'=>$roles]);
+        $data = [];
+        $data['roles'] = Role::all(); // Returns all the data from the Roles Table
+        return view('admin.role.index', $data);
     }
 
     public function store(Request $request)
@@ -28,7 +29,8 @@ class RoleController extends Controller
             'slug'=> Str::of(Str::lower(request('name')))->slug('-')
         ]);
 
-        $request->session()->flash('message', 'Role was created...');
+        $request->session()->flash('message', $request->name .' was created...');
+        $request->session()->flash('text-class', 'text-success');
 
         return back();
     }
@@ -73,7 +75,8 @@ class RoleController extends Controller
     public function destroy(Request $request, Role $role){
         // Delete Role
         $role->delete();
-        $request->session()->flash('message', 'Role was Deleted...');
+        $request->session()->flash('message', $role->name . ' was Deleted...');
+        $request->session()->flash('text-class', 'text-danger');
         return back();
     }
 }

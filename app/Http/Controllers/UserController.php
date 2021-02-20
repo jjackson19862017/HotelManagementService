@@ -84,7 +84,7 @@ class UserController extends Controller
     {
         // Delete User
         $user->delete();
-        $request->session()->flash('message', 'User was Deleted...');
+        $request->session()->flash('message', $user->username . ' was Deleted...');
         $request->session()->flash('text-class', 'text-danger');
         return back();
     }

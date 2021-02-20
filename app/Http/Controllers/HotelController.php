@@ -43,7 +43,7 @@ class HotelController extends Controller
             'numberOfRooms'=> request('numberOfRooms'),
         ]);
 
-        $request->session()->flash('message', 'Hotel was created...');
+        $request->session()->flash('message', $request->name . ' was created...');
         $request->session()->flash('text-class', 'text-success');
 
         return back();

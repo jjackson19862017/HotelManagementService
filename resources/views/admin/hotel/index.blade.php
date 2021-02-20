@@ -37,7 +37,7 @@
                                         <td>{{$hotel->numberOfRooms}}</td>
 
                                         <td>
-                                            <form action="{{route('user.destroy', $hotel->id)}}" method="post">
+                                            <form action="{{route('hotel.destroy', $hotel->id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm"><i
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <!-- Add User Modal-->
+    <!-- Add Hotel Modal-->
 <div class="modal fade" id="addHotelModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"aria-hidden="true">
     <div class="modal-dialog" role="document">
     <div class="modal-content">

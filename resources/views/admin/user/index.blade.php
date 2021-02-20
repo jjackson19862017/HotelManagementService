@@ -1,21 +1,6 @@
 <x-admin-master>
     @section('content')
     <div class="container-fluid">
-        <!-- Top Row -->
-        <div class="row">
-            <div class="col-sm-7">
-                <h1 class="mt-4">Users</h1>
-            </div>
-            <div class="col-sm-5">
-                <h3 class="font-weight-bold @if (Session::has('text-class'))
-                {{Session::get('text-class')}}
-                @endif">
-                    @if (Session::has('message'))
-                        {{Session::get('message')}}
-                    @endif
-                </h3>
-            </div>
-        </div>
         <div class="row">
             <div class="card mb-4 w-100">
                 <div class="card-header">

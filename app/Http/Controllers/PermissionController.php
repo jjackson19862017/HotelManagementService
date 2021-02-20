@@ -11,8 +11,9 @@ class PermissionController extends Controller
     //
     public function index()
     {
-        $permissions = Permission::all(); // Returns all the data from the Permissions Table
-        return view('admin.permissions.index', ['permissions'=>$permissions]);
+        $data = [];
+        $data['permissions'] = Permission::all(); // Returns all the data from the Permissions Table
+        return view('admin.permission.index', $data);
     }
 
     public function store(Request $request)
@@ -27,7 +28,7 @@ class PermissionController extends Controller
             'slug'=> Str::of(Str::lower(request('name')))->slug('-')
         ]);
         $request->session()->flash('text-class', 'text-success');
-        $request->session()->flash('message', 'Permission was created...');
+        $request->session()->flash('message', $request->name . ' was created...');
 
         return back();
     }
@@ -64,7 +65,7 @@ class PermissionController extends Controller
         // Delete Permission
         $permission->delete();
         $request->session()->flash('text-class', 'text-danger');
-        $request->session()->flash('message', 'Permission was Deleted...');
+        $request->session()->flash('message', $permission->name .' was Deleted...');
         return back();
     }
 }
