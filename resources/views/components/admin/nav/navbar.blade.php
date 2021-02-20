@@ -3,7 +3,7 @@
     <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
     <span class="navbar-text h5 my-auto @if (Session::has('text-class'))
     {{Session::get('text-class')}}
-    @endif">Hotels been created
+    @endif">
         @if (Session::has('message'))
             {{Session::get('message')}}
         @endif</span>

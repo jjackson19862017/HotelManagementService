@@ -20,7 +20,7 @@
                                     <th>Address</th>
                                     <th>Website</th>
                                     <th>E-Mail</th>
-                                    <th># Rooms</th>
+                                    <th>Rooms</th>
                                     <th>Action</th>
 
                                 </tr>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f9555868-f124-4857-bd96-5b49d09c0fe3" name="HMS" url="https://hmsv2.webhop.me">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="209.97.135.95" port="22" sshConfigId="129d174c-2ba3-4203-af7c-0acafac373fe" sshConfig="root@209.97.135.95:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
